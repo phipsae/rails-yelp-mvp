@@ -2,8 +2,16 @@
 <h3> <%= @restaurant.address %> </h3>
 <h3> <%= @restaurant.category.capitalize %> </h3>
 <br>
-<% @reviews.each do |review| %>
+<% @restaurant.reviews.each do |review| %>
   <%= review.content %> <%= review.rating %> <br>
 <% end %>
 <br>
-<%= link_to "Write review", new_restaurant_review_path(@restaurant) %>
+<%= render "reviews/new", restaurant: @restaurant, review: @review %>
+
+<%# <%= simple_form_for [@restaurant, @review] do |f| %>
+  <%# <%= f.input :content %> %>
+  <%# <%= f.input :rating %> %>
+  <%# <%= f.submit %> %>
+<%# <% end %> %> %>
+
+<%= link_to "Go back to restaurants", restaurants_path %>

@@ -1,5 +1,5 @@
-<h1>Huhu</h1>
-<%= simple_form_for [@restaurant, @review] do |f| %>
+<h3>New rating</h1>
+<%= simple_form_for [restaurant, review] do |f| %>
   <%= f.input :content %>
   <%= f.input :rating %>
   <%= f.submit %>
